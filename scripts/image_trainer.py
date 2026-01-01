@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-image-ya
+image-ye
 """
 
 import argparse
