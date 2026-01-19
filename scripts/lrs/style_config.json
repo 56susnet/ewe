@@ -13,7 +13,7 @@
             "noise_offset": 0.0411
         },
         "b89415872c1864f2a6ccccb34d6744021aa58eec13ab9109d4fa53931156ead4": {
-            "max_grad_norm": 0.5,
+            "max_grad_norm": 1,
             "prior_loss_weight": 0.612,
             "max_train_epochs": 38,
             "train_batch_size": 6,
@@ -137,7 +137,7 @@
             "max_train_epochs": 35
         },
         "87a20676586c53891563895be0408c6109b83f1d891700dd6ff6c02a25cd6c47": {
-            "max_grad_norm": 0.5,
+            "max_grad_norm": 1,
             "prior_loss_weight": 0.612,
             "max_train_epochs": 38,
             "optimizer_args": [
