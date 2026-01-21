@@ -37,8 +37,8 @@ train_data_dir = "img"
 training_comment = ""
 xformers = true
 
-max_train_epochs = 50
-save_every_n_epochs = 11
+max_train_epochs = 45
+save_every_n_epochs = 12
 
 loss_type = "l2"
 
@@ -51,7 +51,7 @@ unet_lr = 2e-5
 text_encoder_lr = 2e-6
 
 lr_scheduler = "cosine"
-lr_warmup_steps = 25
+lr_warmup_steps = 20
 
 noise_offset_type = "Original"
 noise_offset = 0.0357
@@ -64,6 +64,6 @@ network_dropout = 0
 caption_dropout_rate = 0
 clip_skip = 1
 max_timestep = 1000
-min_snr_gamma = 8
+min_snr_gamma = 5
 scale_weight_norms = 5
 seed = 2951032222
