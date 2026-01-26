@@ -8,9 +8,9 @@ config:
     network:
       type: lora
       linear: 64
-      linear_alpha: 128
+      linear_alpha: 64
       conv: 32
-      conv_alpha: 64
+      conv_alpha: 32
     save:
       dtype: bf16
       save_every: 250
@@ -23,10 +23,10 @@ config:
       resolution: [512, 768, 1024]
       is_reg: false
     train:
-      batch_size: 4
-      steps: 450
-      lr: 3e-5
-      optimizer: adamw
+      batch_size: 1
+      steps: 2200
+      lr: 0.0001
+      optimizer: adamw8bit
       gradient_checkpointing: true
       noise_scheduler: flowmatch
       timestep_type: weighted
