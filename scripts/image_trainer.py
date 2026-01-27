@@ -259,9 +259,11 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             else:
                 network_config = config_mapping[network_config_person[model_name]]
 
-            config["network_dim"] = network_config["network_dim"]
-            config["network_alpha"] = network_config["network_alpha"]
-            config["network_args"] = network_config["network_args"]
+            # Hanya timpa jika config masih default (-1)
+            if config.get("network_dim", -1) == -1:
+                config["network_dim"] = network_config["network_dim"]
+                config["network_alpha"] = network_config["network_alpha"]
+                config["network_args"] = network_config["network_args"]
 
         config_path = os.path.join(train_cst.IMAGE_CONTAINER_CONFIG_SAVE_PATH, f"{task_id}.toml")
         save_config_toml(config, config_path)
