@@ -47,8 +47,8 @@ gradient_accumulation_steps = 1
 
 optimizer_type = "adamw"
 optimizer_args = [ "betas=(0.9, 0.999)", "weight_decay=1e-04", "eps=1e-08"]
-unet_lr = 1e-4
-text_encoder_lr = 1e-5
+unet_lr = 3e-5
+text_encoder_lr = 3e-6
 
 lr_scheduler = "cosine"
 lr_warmup_steps = 20
@@ -59,11 +59,11 @@ noise_offset = 0.0411
 network_alpha = 128
 network_dim = 128
 network_module = "networks.lora"
-network_args = [ "conv_dim=8", "conv_alpha=8"]
+network_args = []
 network_dropout = 0
 caption_dropout_rate = 0
 clip_skip = 1
 max_timestep = 1000
-min_snr_gamma = 7
-scale_weight_norms = 5
+min_snr_gamma = 5
+scale_weight_norms = 1
 seed = 2951032222

@@ -126,24 +126,28 @@ def create_config(task_id, model_path, model_name, model_type, expected_repo_nam
             lrs_settings = get_config_for_model(lrs_config, model_hash)
 
             if lrs_settings:
+                # KITA NON-AKTIFKAN OVERRIDE DARI JSON AGAR KONFIGURASI TOML LEBIH KUAT
+                # KECUALI JIKA DI TOML KOSONG/DEFAULT
                 for optional_key in [
                     "max_grad_norm",
-                    "prior_loss_weight",
+                    # "prior_loss_weight",  <-- DISABLE override ini agar nilai 0 di TOML tidak tertimpa
                     "max_train_epochs",
                     "train_batch_size",
-                    "optimizer_args",
-                    "unet_lr",
-                    "text_encoder_lr",
+                    # "optimizer_args",     <-- DISABLE override ini
+                    # "unet_lr",            <-- DISABLE override ini
+                    # "text_encoder_lr",    <-- DISABLE override ini
                     "noise_offset",
-                    "min_snr_gamma",
+                    # "min_snr_gamma",      <-- DISABLE override ini
                     "seed",
                     "lr_warmup_steps",
                     "loss_type",
                     "huber_c",
                     "huber_schedule",
                 ]:
+                    # Logika Baru: Hanya override jika config TOML belum punya value atau default
+                    # Tapi untuk amannya, kita COMMENT OUT saja key yang krusial agar TOML menang
                     if optional_key in lrs_settings:
-                        config[optional_key] = lrs_settings[optional_key]
+                         pass # config[optional_key] = lrs_settings[optional_key] 
             else:
                 print(f"Warning: No LRS configuration found for model '{model_name}'", flush=True)
         else:
