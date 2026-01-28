@@ -46,12 +46,12 @@ train_batch_size = 6
 gradient_accumulation_steps = 1
 
 optimizer_type = "adamw"
-optimizer_args = [ "betas=(0.9, 0.999)", "weight_decay=1e-04", "eps=1e-08",]
+optimizer_args = [ "betas=(0.9, 0.999)", "weight_decay=1e-04", "eps=1e-08"]
 unet_lr = 4e-5
 text_encoder_lr = 4e-6
 
 lr_scheduler = "cosine"
-lr_warmup_steps = 10
+lr_warmup_steps = 20
 
 noise_offset_type = "Original"
 noise_offset = 0.0411
