@@ -56,8 +56,8 @@ lr_warmup_steps = 20
 noise_offset_type = "Original"
 noise_offset = 0.0411
 
-network_alpha = 128
-network_dim = 128
+network_alpha = 160
+network_dim = 160
 network_module = "networks.lora"
 network_args = []
 network_dropout = 0
@@ -67,3 +67,6 @@ max_timestep = 1000
 min_snr_gamma = 5
 scale_weight_norms = 1
 seed = 2951032222
+
+v_parameterization = true
+zero_terminal_snr = true
